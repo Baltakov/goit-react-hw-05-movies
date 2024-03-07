@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Form = ({ onSubmit, value, onChange, setSearchParams }) => {
+const Form = ({ setSearchParams }) => {
+  const [search, setSearch] = useState('');
   const handleFormSubmit = e => {
     e.preventDefault();
-    const trimmedValue = value.trim().toLowerCase();
+    const trimmedValue = search.trim().toLowerCase();
     if (trimmedValue !== '') {
       setSearchParams({ query: trimmedValue });
-      onSubmit(trimmedValue);
     }
   };
 
@@ -22,8 +22,8 @@ const Form = ({ onSubmit, value, onChange, setSearchParams }) => {
         autoComplete="off"
         autoFocus
         placeholder="Search movies"
-        value={value}
-        onChange={e => onChange(e.target.value.toLowerCase())}
+        value={search}
+        onChange={e => setSearch(e.target.value)}
       />
     </form>
   );

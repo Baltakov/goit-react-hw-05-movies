@@ -26,12 +26,7 @@ const MoviesSearch = () => {
 
   return (
     <div>
-      <Form
-        onSubmit={() => {}}
-        value={query}
-        onChange={value => setSearchParams({ query: value })}
-        setSearchParams={setSearchParams}
-      />
+      <Form value={query} setSearchParams={setSearchParams} />
       <MoviesList movies={movies} />
     </div>
   );

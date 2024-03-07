@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  StyledMoviesList,
-  StyledMovieLink,
   StyledLi,
-} from '../pages/Home.styled';
+  StyledMovieLink,
+  StyledMoviesList,
+} from './MoviesList.styled';
 
 const MoviesList = ({ movies }) => {
   const location = useLocation();

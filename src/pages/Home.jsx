@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import FetchMoviesList from 'services/MoviesList-api';
 import MoviesList from '../components/MoviesList';
-import { Title, StyledMoviesList } from './Home.styled';
+import { Title } from './Home.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -31,13 +31,7 @@ const Home = () => {
   return (
     <div>
       <Title>Trending movies</Title>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <StyledMoviesList>
-          <MoviesList movies={movies} />
-        </StyledMoviesList>
-      )}
+      {isLoading ? <p>Loading...</p> : <MoviesList movies={movies} />}
     </div>
   );
 };
